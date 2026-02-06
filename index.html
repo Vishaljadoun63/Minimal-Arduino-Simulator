@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Arduino Web Simulator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Arduino Web Simulator</h1>
+      <p>LED Control using Push Button</p>
+    </header>
+
+    <div id="app">
+      <!-- COMPONENT PALETTE -->
+      <aside id="components">
+        <h3>Components</h3>
+
+        <button id="addArduino" draggable="true" class="tool">Arduino Uno</button>
+        <button id="addLED" draggable="true" class="tool">LED</button>
+        <button id="addButton" draggable="true" class="tool">Push Button</button>
+
+        <p class="hint">⬇ Drag components into canvas</p>
+      </aside>
+
+      <!-- CANVAS -->
+      <main
+        id="canvas"
+        ondragover="event.preventDefault()"
+        ondrop="handleDrop(event)"
+      >
+        <h2>Canvas</h2>
+
+        <section class="card">
+          <h4>Arduino</h4>
+          <div id="arduinoArea"></div>
+        </section>
+
+        <section class="card">
+          <h4>LED</h4>
+          <div id="ledArea"></div>
+        </section>
+
+        <section class="card">
+          <h4>Push Button</h4>
+          <div id="buttonArea"></div>
+        </section>
+
+        <section class="card">
+          <h4>Simulation Control</h4>
+          <button id="startSim" class="primary">▶ Start</button>
+          <button id="stopSim" class="danger">■ Stop</button>
+
+          <p class="status">
+            Status:
+            <strong id="simStatus" class="stopped">STOPPED</strong>
+          </p>
+        </section>
+
+        <section class="card">
+          <h4>Auto Wiring</h4>
+          <div id="wiringInfo" class="mono"></div>
+        </section>
+
+        <section class="card">
+          <h4>Arduino Code</h4>
+          <pre id="code"></pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

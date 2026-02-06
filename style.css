@@ -1,0 +1,174 @@
+/* ================= GLOBAL ================= */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #020617);
+  color: #e5e7eb;
+}
+
+/* ================= HEADER ================= */
+header {
+  padding: 18px 32px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+header h1 {
+  margin: 0;
+}
+
+header p {
+  margin: 4px 0 0;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+/* ================= LAYOUT ================= */
+#app {
+  display: flex;
+  height: calc(100vh - 90px);
+}
+
+/* ================= SIDEBAR ================= */
+#components {
+  width: 240px;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.9);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#components h3 {
+  margin-top: 0;
+}
+
+.tool {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.08);
+  border: none;
+  border-radius: 8px;
+  color: #e5e7eb;
+  cursor: grab;
+  transition: transform 0.15s ease, background 0.2s;
+}
+
+.tool:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+.hint {
+  margin-top: 16px;
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+/* ================= CANVAS ================= */
+#canvas {
+  flex: 1;
+  padding: 24px;
+  overflow-y: auto;
+}
+
+#canvas h2 {
+  margin-top: 0;
+}
+
+/* ================= CARDS ================= */
+.card {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}
+
+.card h4 {
+  margin-top: 0;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+.primary {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+}
+
+.danger {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+}
+
+.primary:hover,
+.danger:hover {
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.25);
+}
+
+/* ================= LED ================= */
+.led {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #4b5563;
+  margin-top: 12px;
+  transition: all 0.3s ease;
+}
+
+.led.on {
+  background: red;
+  box-shadow:
+    0 0 10px red,
+    0 0 20px red,
+    0 0 30px rgba(255, 0, 0, 0.6);
+}
+
+/* ================= STATUS ================= */
+.status {
+  margin-top: 10px;
+}
+
+.running {
+  color: #22c55e;
+}
+
+.stopped {
+  color: #ef4444;
+}
+
+/* ================= CODE ================= */
+pre {
+  background: #020617;
+  color: #e5e7eb;
+  padding: 14px;
+  border-radius: 10px;
+  overflow-x: auto;
+  font-size: 13px;
+}
+
+.mono {
+  font-family: monospace;
+}
+
